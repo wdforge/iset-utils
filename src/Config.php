@@ -10,6 +10,25 @@ class Config extends Params
 {
 
   /**
+   * Получение отдельной секции или списка всех параметров
+   *
+   * @param string $section
+   * @return array|mixed|null
+   * @throws NotFoundFile
+   */
+  public static function getConfig($section = "")
+  {
+    if (empty(static::$_config)) {
+      static::loadConfig(static::$_filePath);
+    }
+    if (empty($section)) {
+      return static::$_config;
+    }
+
+    return isset(static::$_config[$section]) ? static::$_config[$section] : null;
+  }
+
+  /**
    * Метод загрузки массива путей конфигов
    *
    * @param array $configs
