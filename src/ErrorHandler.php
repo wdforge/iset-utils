@@ -95,7 +95,7 @@ class ErrorHandler
         }
       }
     } else {
-      /* @var Exception $errno */
+      /* @var \Exception $errno */
       $message .= "<b> Uncatched Exception </b>  " . $errno->getMessage() . "<br />\n";
       $message .= "  warning on line " . $errno->getLine() . " in file " . $errno->getFile();
       $message .= ", PHP " . PHP_VERSION . " (" . PHP_OS . ")<br />\n";
@@ -104,12 +104,12 @@ class ErrorHandler
 
     try {
       if (is_object($errno)) {
-        /* @var Exception $errno */
+        /* @var \Exception $errno */
         throw $errno;
       } else {
         throw new Exception('');
       }
-    } catch (Exception $e) {
+    } catch (\Exception $e) {
       $trace = explode("\n", $e->getTraceAsString());
       array_shift($trace);
 
@@ -120,17 +120,9 @@ class ErrorHandler
 
     if ($criticalError) {
       if (ini_get('display_errors')) {
-        if (Abstract_ViewModel::$is_header) {
-          echo(new Json_Model(array('error' => $message)));
-        } else {
           echo $message;
-        }
       } else {
-        if (Abstract_ViewModel::$is_header) {
-          echo(new Json_Model(array('error' => true)));
-        } else {
-          echo 'error';
-        }
+          echo 'critical error';
       }
       die();
     }
