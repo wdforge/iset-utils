@@ -107,7 +107,7 @@ class ErrorHandler
         /* @var \Exception $errno */
         throw $errno;
       } else {
-        throw new Exception('');
+        throw new \Exception('');
       }
     } catch (\Exception $e) {
       $trace = explode("\n", $e->getTraceAsString());
