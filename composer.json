@@ -1,0 +1,16 @@
+{
+    "name": "wdforge/iset-utils",
+    "type": "iset-utils: framework support classes",
+    "authors": [
+        {
+            "name": "Dolgiy Yuriy",
+            "email": "wdforge@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+      "psr-4": {
+        "Iset\\Utils\\": "src"
+       }
+     }
+}
