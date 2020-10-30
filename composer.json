@@ -2,6 +2,7 @@
     "name": "iset-framework/utils",
     "type": "library",
     "description": "iset-utils: framework support classes",
+    "license": "BSD-3-Clause",
     "authors": [
         {
             "name": "Dolgiy Yuriy",
