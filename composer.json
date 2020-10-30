@@ -1,18 +1,18 @@
 {
-    "name": "iset-framework/utils",
-    "type": "library",
-    "description": "iset-utils: framework support classes",
-    "license": "BSD-3-Clause",
-    "authors": [
-        {
-            "name": "Dolgiy Yuriy",
-            "email": "wdforge@gmail.com"
-        }
-    ],
-    "require": {},
-    "autoload": {
-      "psr-4": {
-        "Iset\\Utils\\": "src"
-       }
-     }
+  "name": "iset-framework/utils",
+  "type": "library",
+  "description": "iset-utils: framework support classes",
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Dolgiy Yuriy",
+      "email": "wdforge@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Iset\\Utils\\": "src"
+    }
+  }
 }

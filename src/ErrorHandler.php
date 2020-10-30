@@ -120,9 +120,9 @@ class ErrorHandler
 
     if ($criticalError) {
       if (ini_get('display_errors')) {
-          echo $message;
+        echo $message;
       } else {
-          echo 'critical error';
+        echo 'critical error';
       }
       die();
     }

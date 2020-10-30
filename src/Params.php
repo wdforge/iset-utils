@@ -53,7 +53,7 @@ class Params implements IParams
   public function get($section, $default = null)
   {
     $result = $this->getElementFromPatch($section, $this->_params);
-    if(is_null($result)) {
+    if (is_null($result)) {
       return $default;
     }
 

@@ -25,7 +25,6 @@ class Logger
         echo sprintf("Не удаётся создать лог фаил: %s.", $dir);
       }
 
-
       if (!empty($log) && is_string($log) && !empty($logfile) && $file = fopen($logfile, "a")) {
         $date_str = date('Y-m-d H:i:s');
         fwrite($file, "\n" . $date_str . ":  " . $log . "\n");
