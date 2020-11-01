@@ -1,6 +1,7 @@
 <?php
 
 namespace Iset\Utils;
+
 /**
  * Interface IParams
  * @package Iset\Utils
