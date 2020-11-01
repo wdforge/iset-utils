@@ -2,8 +2,6 @@
 
 namespace Iset\Utils;
 
-use Psr\Container\ContainerInterface;
-
 /**
  * Class Params
  * @package Iset\Utils
@@ -33,6 +31,7 @@ class Params implements IParams
     return $this->_params ? $this->_params : [];
   }
 
+
   /**
    *
    * @param array
@@ -41,8 +40,10 @@ class Params implements IParams
   public function setArray(array $array)
   {
     $this->_params = $array;
+
     return $this->_params ? $this->_params : [];
   }
+
 
   /**
    * @param $section
@@ -59,6 +60,7 @@ class Params implements IParams
     return $result;
   }
 
+
   /**
    * @param $section
    * @return mixed
@@ -67,6 +69,7 @@ class Params implements IParams
   {
     return $this->setElementToPatch($section, $this->_params, $value);
   }
+
 
   /**
    * @param $section
@@ -77,11 +80,4 @@ class Params implements IParams
     return $this->deleteElementFromPatch($section, $this->_params);
   }
 
-  /**
-   * @return ContainerInterface
-   */
-  public function getContainer()
-  {
-    return new Container($this);
-  }
 }
