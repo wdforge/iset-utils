@@ -17,19 +17,18 @@ class Logger
    */
   static public function Log($log)
   {
-
     $dir = dirname(self::$logfile);
-
     if (!is_dir($dir)) {
       if (!mkdir($dir, 0777, true)) {
-        echo sprintf("Не удаётся создать лог фаил: %s.", $dir);
+        throw new \Exception(sprintf("Не удаётся создать лог фаил: %s.", $dir));
       }
-
-      if (!empty($log) && is_string($log) && !empty($logfile) && $file = fopen($logfile, "a")) {
-        $date_str = date('Y-m-d H:i:s');
-        fwrite($file, "\n" . $date_str . ":  " . $log . "\n");
-        fclose($file);
-      }
+    }
+    if (!empty($log) && is_string($log) && !empty(self::$logfile) && $file = fopen(self::$logfile, "a")) {
+      $date_str = date('Y-m-d H:i:s');
+      fwrite($file, "\n" . $date_str . ":  " . $log . "\n");
+      fclose($file);
+     } else {
+      throw new \Exception(sprintf("Не удаётся записать данные: %s.", $logfile));
     }
   }
 }
